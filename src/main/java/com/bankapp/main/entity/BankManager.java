@@ -41,15 +41,15 @@ public class BankManager {
     private Gender gender;
 
     @ManyToOne
-    @JoinColumn(name = "pincode_id")
+    @JoinColumn(name = "pincode")
     private PinCode pincode;
 
     @ManyToOne
-    @JoinColumn(name = "state_id")
+    @JoinColumn(name = "state")
     private State state;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city")
     private City city;
 
     @NotBlank(message = "Street is required")

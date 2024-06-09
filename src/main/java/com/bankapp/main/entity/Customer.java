@@ -38,15 +38,15 @@ public class Customer {
     private String phoneNumber;
 
     @ManyToOne
-    @JoinColumn(name = "pincode_id")
+    @JoinColumn(name = "pincode",referencedColumnName ="pincode_id")
     private PinCode pincode;
 
     @ManyToOne
-    @JoinColumn(name = "state_id")
+    @JoinColumn(name = "state")
     private State state;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city")
     private City city;
 
     @Column(nullable = false)
@@ -56,7 +56,7 @@ public class Customer {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "manager_id")
+    @JoinColumn(name = "manager")
     private BankManager manager;
 
     // Employment and Income Details

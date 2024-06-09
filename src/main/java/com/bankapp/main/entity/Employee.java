@@ -1,9 +1,7 @@
 package com.bankapp.main.entity;
 
 import com.bankapp.main.enums.Gender;
-import com.bankapp.master.entity.City;
-import com.bankapp.master.entity.PinCode;
-import com.bankapp.master.entity.State;
+import com.bankapp.master.entity.*;
 import jakarta.persistence.*;
 
 import javax.validation.constraints.*;
@@ -48,15 +46,15 @@ public class Employee {
     private String phoneNumber;
 
     @ManyToOne
-    @JoinColumn(name = "pincode_id")
+    @JoinColumn(name = "pincode")
     private PinCode pincode;
 
     @ManyToOne
-    @JoinColumn(name = "state_id")
+    @JoinColumn(name = "state")
     private State state;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city")
     private City city;
 
     @Column(nullable = false)
@@ -66,14 +64,15 @@ public class Employee {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "manager_id")
     private BankManager manager;
 
-    @Column
-    private String jobTitle;
+    @ManyToOne
+    @JoinColumn
+    private JobTitle jobTitle;
 
-    @Column
-    private String department;
+    @ManyToOne
+    @JoinColumn
+    private Department department;
 
     @Column
     private Date hireDate;
@@ -87,7 +86,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Long employeeId, String firstName, String lastName, Gender gender, String email, Date dateOfBirth, String phoneNumber, PinCode pincode, State state, City city, String street, String address, BankManager manager, String jobTitle, String department, Date hireDate, double salary, boolean isActive) {
+    public Employee(Long employeeId, String firstName, String lastName, Gender gender, String email, Date dateOfBirth, String phoneNumber, PinCode pincode, State state, City city, String street, String address, BankManager manager, JobTitle jobTitle, Department department, Date hireDate, double salary, boolean isActive) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -212,19 +211,19 @@ public class Employee {
         this.manager = manager;
     }
 
-    public String getJobTitle() {
+    public JobTitle getJobTitle() {
         return jobTitle;
     }
 
-    public void setJobTitle(String jobTitle) {
+    public void setJobTitle(JobTitle jobTitle) {
         this.jobTitle = jobTitle;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 

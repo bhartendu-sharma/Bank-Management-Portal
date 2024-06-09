@@ -11,7 +11,6 @@ public class Bank {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bank_id")
     private Long id;
 
     @Column(nullable = false)
@@ -20,23 +19,23 @@ public class Bank {
     @Column(nullable = false)
     private String bankCode;
 
-    @ManyToOne
-    @JoinColumn(name = "bank_manager_id")
+    @OneToOne
+    @JoinColumn(name = "manager")
     private BankManager bankManager;
 
     @Column(nullable = false)
     private String website;
 
     @ManyToOne
-    @JoinColumn(name = "pincode_id")
+    @JoinColumn(name = "pincode")
     private PinCode pincode;
 
     @ManyToOne
-    @JoinColumn(name = "state_id")
+    @JoinColumn(name = "state")
     private State state;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city")
     private City city;
 
     @Column(nullable = false)
@@ -47,9 +46,6 @@ public class Bank {
 
     @Column(nullable = false)
     private String bankEmail;
-
-//    @ManyToOne
-//    private Country country;
 
 
     public Bank() {

@@ -27,7 +27,7 @@
                     </c:if>
 
                     <!-- Registration form -->
-                    <form action="/register" method="post">
+                    <form action="/user/register" method="post">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" required>

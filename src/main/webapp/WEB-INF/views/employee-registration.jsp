@@ -3,11 +3,12 @@
 <head>
     <title>Employee Registration</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div class="container">
     <h2 class="mt-4">Employee Registration Form</h2>
-    <form action="${pageContext.request.contextPath}/employee/register" method="post" modelAttribute="employee">
+    <form id="employeeForm" action="${pageContext.request.contextPath}/employee/register" method="post">
         <div class="form-group">
             <label>First Name:</label>
             <input type="text" class="form-control" name="firstName" required>
@@ -69,12 +70,16 @@
 
         <div class="form-group">
             <label>Job Title:</label>
-            <input type="text" class="form-control" name="jobTitle">
+            <select class="form-control" name="jobTitle" required>
+                <!-- Job Title options will be populated dynamically -->
+            </select>
         </div>
 
         <div class="form-group">
             <label>Department:</label>
-            <input type="text" class="form-control" name="department">
+            <select class="form-control" name="department" required>
+                <!-- Department options will be populated dynamically -->
+            </select>
         </div>
 
         <div class="form-group">
@@ -95,5 +100,23 @@
         <button type="submit" class="btn btn-primary">Register</button>
     </form>
 </div>
+
+<script>
+    // jQuery code to populate the Job Title dropdown
+    $(document).ready(function() {
+        var jobTitles = ${JobTitle.values()};
+        var jobTitleDropdown = $('select[name="jobTitle"]');
+        $.each(jobTitles, function(index, value) {
+            jobTitleDropdown.append($('<option>').text(value).attr('value', value));
+        });
+
+        var departments = ${Department.values()};
+        var departmentDropdown = $('select[name="department"]');
+        $.each(departments, function(index, value) {
+            departmentDropdown.append($('<option>').text(value).attr('value', value));
+        });
+    });
+</script>
+
 </body>
 </html>

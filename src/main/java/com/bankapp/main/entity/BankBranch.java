@@ -9,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.List;
 
+@Entity
+@Table(name = "bank_management_portal_bank_branch_dtl")
 public class BankBranch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,20 +22,20 @@ public class BankBranch {
     @Column(nullable = false)
     private String branchCode;
 
-    @ManyToOne
-    @JoinColumn(name = "bank_manager_id")
-    private BankManager bankManager;
+    @OneToOne
+    @JoinColumn(name = "manager")
+    private BankManager manager;
 
     @ManyToOne
-    @JoinColumn(name = "pincode_id")
+    @JoinColumn(name = "pincode")
     private PinCode pincode;
 
     @ManyToOne
-    @JoinColumn(name = "state_id")
+    @JoinColumn(name = "state")
     private State state;
 
     @ManyToOne
-    @JoinColumn(name = "city_id")
+    @JoinColumn(name = "city")
     private City city;
 
     @Column(nullable = false)
@@ -58,11 +60,130 @@ public class BankBranch {
     private String closingHours;
 
     // Employees
-    @OneToMany(mappedBy = "branch")
+    @OneToMany(mappedBy = "employee")
     private List<Employee> employees;
 
     // Customers
-    @OneToMany(mappedBy = "branch")
+    @OneToMany(mappedBy = "customer")
     private List<Customer> customers;
 
+    public Long getId() {
+        return id;p
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getBranchName() {
+        return branchName;
+    }
+
+    public void setBranchName(String branchName) {
+        this.branchName = branchName;
+    }
+
+    public String getBranchCode() {
+        return branchCode;
+    }
+
+    public void setBranchCode(String branchCode) {
+        this.branchCode = branchCode;
+    }
+
+    public BankManager getManager() {
+        return manager;
+    }
+
+    public void setManager(BankManager manager) {
+        this.manager = manager;
+    }
+
+    public PinCode getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(PinCode pincode) {
+        this.pincode = pincode;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getBranchAddress() {
+        return branchAddress;
+    }
+
+    public void setBranchAddress(String branchAddress) {
+        this.branchAddress = branchAddress;
+    }
+
+    public String getBranchEmail() {
+        return branchEmail;
+    }
+
+    public void setBranchEmail(String branchEmail) {
+        this.branchEmail = branchEmail;
+    }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    public void setOpen(boolean open) {
+        isOpen = open;
+    }
+
+    public String getOpeningHours() {
+        return openingHours;
+    }
+
+    public void setOpeningHours(String openingHours) {
+        this.openingHours = openingHours;
+    }
+
+    public String getClosingHours() {
+        return closingHours;
+    }
+
+    public void setClosingHours(String closingHours) {
+        this.closingHours = closingHours;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
 }

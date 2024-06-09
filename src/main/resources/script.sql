@@ -77,3 +77,35 @@ INSERT INTO country_m (country_isd_code, country_iso_code, country_name, currenc
 INSERT INTO country_m (country_isd_code, country_iso_code, country_name, currency_name, currency_code, status) VALUES ('41', 'CH', 'Switzerland', 'Swiss Franc', 'CHF', 1);
 INSERT INTO country_m (country_isd_code, country_iso_code, country_name, currency_name, currency_code, status) VALUES ('65', 'SG', 'Singapore', 'Singapore Dollar', 'SGD', 1);
 INSERT INTO country_m (country_isd_code, country_iso_code, country_name, currency_name, currency_code, status) VALUES ('52', 'MX', 'Mexico', 'Mexican Peso', 'MXN', 1);
+
+
+
+
+-- Insert script for bank_management_portal_department_m table
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('OPS', 'Operations', 'Department responsible for day-to-day operations', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('FIN', 'Finance', 'Department responsible for financial activities', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('HR', 'Human Resources', 'Department responsible for HR functions', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('MKT', 'Marketing', 'Department responsible for marketing activities', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('IT', 'Information Technology', 'Department responsible for IT infrastructure', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('LEGAL', 'Legal', 'Department responsible for legal matters', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('RISK', 'Risk Management', 'Department responsible for risk assessment', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('COMP', 'Compliance', 'Department responsible for compliance activities', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ('CUST_SERV', 'Customer Service', 'Department responsible for customer support', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ( 'LOANS', 'Loans', 'Department responsible for loan processing', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ( 'ACCT', 'Accounting', 'Department responsible for accounting tasks', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ( 'ADMIN', 'Administration', 'Department responsible for administrative functions', 1);
+INSERT INTO bank_management_portal_department_m (code, name, description, status) VALUES ( 'OTHER', 'Other', 'Other department', 1);
+
+-- Insert script for bank_management_portal_job_title_m table
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('MGR', 'Manager', 'Managerial position', 1, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('ASST_MGR', 'Assistant Manager', 'Assistant managerial position', 1, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('TELLER', 'Teller', 'Teller position', 1, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('CSR', 'Customer Service Representative', 'Customer service role', 1, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('FIN_ANALYST', 'Financial Analyst', 'Financial analysis role', 2, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('LOAN_OFFICER', 'Loan Officer', 'Loan processing role', 10, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('ACCOUNTANT', 'Accountant', 'Accounting role', 11, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('AUDITOR', 'Auditor', 'Auditing role', 11, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ('IT_SPECIALIST', 'IT Specialist', 'IT support role', 5, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ( 'HR_MGR', 'HR Manager', 'HR managerial role', 3, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ( 'MKTG_MGR', 'Marketing Manager', 'Marketing managerial role', 4, 1);
+INSERT INTO bank_management_portal_job_title_m (code, name, description, department_id, status) VALUES ( 'OTHER', 'Other', 'Other job title', 13, 1);
