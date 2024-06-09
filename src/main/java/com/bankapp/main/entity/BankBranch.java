@@ -68,7 +68,7 @@ public class BankBranch {
     private List<Customer> customers;
 
     public Long getId() {
-        return id;p
+        return id;
     }
 
     public void setId(Long id) {
